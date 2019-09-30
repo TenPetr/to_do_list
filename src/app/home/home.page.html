@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar id="toolbar">
+    <ion-row>
+      <ion-col>
+        <ion-text id="dateNumber">{{ dateNumber }}</ion-text>
+        <ion-text id="dateNumber2">{{ monthNumber }}</ion-text>
+        <ion-button fill="clear" id="settings">
+          <ion-icon id="iconSettings" slot="icon-only" name="settings" color="dark"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" id="doneAll" (click)="allDoneModal()">
+          <ion-icon id="iconDoneall" slot="icon-only" name="done-all" color="dark"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="white" fullscreen class="ion-padding">
+  <ion-row>
+    <ion-col size-lg="6" offset-lg="3">
+
+      <div id="item" *ngFor="let item of this.taskService.tasksArray; let i = index">
+        <ion-label id="text" class="ion-text-wrap"><p id="taskHeading">{{ item.title }}</p></ion-label>
+        <ion-checkbox id="checkbox" color="dark" [(ngModel)]="item.checked" (ionChange)="displayButtons()"></ion-checkbox><br>
+        <ion-text id="dateAndTime">
+          <span *ngIf="item.time != undefined"><ion-icon name="notifications-outline"></ion-icon><span id="align">{{ item.time | date:'HH:mm' }} </span>&nbsp;&nbsp;</span><span *ngIf="item.date != undefined"><ion-icon name="calendar"></ion-icon><span id="align"> {{ item.date | date:'dd.MM.yyyy' }} </span></span>
+        </ion-text>
+        <span *ngIf="item.label != undefined" id="labels" class="{{ item.color }}">
+          <span id="label">{{ item.label }}</span>
+        </span>
+        <div id="hr"></div>
+      </div>
+
+    </ion-col>
+  </ion-row>
+
+  <ion-fab *ngIf="showButtons == true" vertical="bottom" horizontal="start" slot="fixed" id="fabButton">
+    <ion-fab-button color="dark" size="small" (click)="deleteTask()"><ion-icon id="trashcanIcon" name="trash"></ion-icon></ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed" id="fabButton">
+    <ion-fab-button color="dark" size="medium" (click)="addNewModal()" [disabled]="activeAddButton"><ion-icon name="add"></ion-icon></ion-fab-button>
+  </ion-fab>
+  <ion-fab *ngIf="showButtons == true" vertical="bottom" horizontal="end" slot="fixed" id="fabButton">
+    <ion-fab-button color="dark" size="small" (click)="doneTask()"><ion-icon name="checkmark"></ion-icon></ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+
+

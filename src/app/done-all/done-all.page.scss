@@ -1,0 +1,76 @@
+#text {
+  position: absolute;
+  margin-left: 10px;
+}
+
+#checkbox {
+  float: right;
+}
+
+#hr {
+  margin-top: 55px;
+  border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+#taskHeading {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+#labels {
+  position: relative;
+  top: 38px;
+  left: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 4px 8px 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.Red {
+  background-color: rgb(245, 29, 29);
+}
+
+.Blue {
+  background-color: rgb(0, 89, 255);
+}
+
+.Green {
+  background-color: rgb(56, 146, 3);
+}
+
+.Yellow {
+  background-color: rgb(255, 219, 15);
+}
+
+.Purple {
+  background-color: rgb(119, 0, 255);
+}
+
+.Pink {
+  background-color: rgb(202, 79, 120);
+}
+
+.Default {
+  background-color: rgb(63, 63, 63);
+}
+
+#dateAndTime {
+  margin-left: 9px;
+  position: absolute;
+  margin-top: 8px;
+}
+
+#item {
+  margin-top: 15px;
+}
+
+#align {
+  position: relative;
+  bottom: 2px;
+}
+
+#trashcanIcon {
+  font-size: 21px;
+}

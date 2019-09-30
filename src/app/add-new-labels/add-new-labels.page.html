@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-title>Add new label</ion-title>
+      <ion-button (click)="this.modalCtrl.dismiss(null, 'closed')" fill="clear">
+        <ion-icon slot="icon-only" name="close" color="dark"></ion-icon>
+      </ion-button>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-input id="input" [(ngModel)]="labelsName" placeholder="Enter name of the label"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Select color</ion-label>
+        <ion-select value="" okText="Okay" cancelText="Cancel" [(ngModel)]="labelsColor">
+          <ion-select-option *ngFor="let color of this.labelService.avaiableColors" value="{{ color }}">{{ color }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button (click)="saveLabel()" color="dark" id="saveButton">Save</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-title>Add new task</ion-title>
+      <ion-button (click)="this.modalCtrl.dismiss(null, 'closed')" fill="clear">
+        <ion-icon slot="icon-only" name="close" color="dark"></ion-icon>
+      </ion-button>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-input id="input" [(ngModel)]="nameOfTheTask" placeholder="Enter name of the task"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Select time</ion-label>
+        <ion-datetime [(ngModel)]="timeTask" display-format="H:mm" picker-format="H:mm" placeholder="{{ currentTime }}"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Select date</ion-label>
+        <ion-datetime [(ngModel)]="dateTask" display-format="DD.M.YYYY" picker-format="DD.M.YYYY" max="2100-01-01" placeholder="{{ currentDate }}"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Select label</ion-label>
+        <ion-select value="" okText="Okay" cancelText="Cancel" (ionChange)="selectedLabel()" [(ngModel)]="label">
+          <ion-select-option *ngFor="let label of this.labelService.usersLabels" value="{{ label.name }}">{{ label.name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button (click)="addNewLabel()" color="dark" id="addnewLabels">New label</ion-button>
+      <ion-button (click)="saveTheText()" color="dark" id="saveButton">Save</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
