@@ -25,12 +25,14 @@
       </ion-item>
       <ion-item>
         <ion-label>Select label</ion-label>
-        <ion-select value="" okText="Okay" cancelText="Cancel" (ionChange)="selectedLabel()" [(ngModel)]="label">
+        <ion-select value="" okText="Okay" cancelText="Cancel" [(ngModel)]="label">
           <ion-select-option *ngFor="let label of this.labelService.usersLabels" value="{{ label.name }}">{{ label.name }}</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-button (click)="addNewLabel()" color="dark" id="addnewLabels">New label</ion-button>
+      <ion-button (click)="addNewLabel()" color="dark" id="addnewLabels">New Label</ion-button>
       <ion-button (click)="saveTheText()" color="dark" id="saveButton">Save</ion-button>
     </ion-col>
   </ion-row>
 </ion-content>
+  
+

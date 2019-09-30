@@ -59,12 +59,7 @@ export class HomePage {
       component: DoneAllPage
     });
 
-    modal.onDidDismiss().then(data => {
-      if (data.role != "closed") {
-        console.log(data);
-      }
-      this.headerRefresh();
-    });
+    this.headerRefresh();
 
     return await modal.present();
   }

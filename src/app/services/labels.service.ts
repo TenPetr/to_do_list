@@ -11,6 +11,8 @@ export class LabelsService {
     "Purple",
     "Green",
     "Red",
+    "Kelly",
+    "Indigo",
     "Pink",
     "Default"
   ];
@@ -40,10 +42,12 @@ export class LabelsService {
   }
 
   addNewLabel(label) {
-    this.usersLabels.push({
-      name: label.data.name,
-      color: label.data.color
-    });
-    localStorage.setItem("labels", JSON.stringify(this.usersLabels));
+    if (label.data != undefined) {
+      this.usersLabels.push({
+        name: label.data.name,
+        color: label.data.color
+      });
+      localStorage.setItem("labels", JSON.stringify(this.usersLabels));
+    }
   }
 }

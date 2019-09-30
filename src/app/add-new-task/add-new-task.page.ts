@@ -85,10 +85,6 @@ export class AddNewTaskPage {
     this.currentTime = this.timeDate.currentTime();
   }
 
-  selectedLabel() {
-    console.log(this.label);
-  }
-
   ngOnDestroy() {
     this.label = null;
   }

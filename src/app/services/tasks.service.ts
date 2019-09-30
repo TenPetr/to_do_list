@@ -33,17 +33,19 @@ export class TasksService {
   }
 
   pushTasks(task): void {
-    let object = {
-      title: task.data.name,
-      time: task.data.timeTask,
-      date: task.data.dateTask,
-      label: task.data.label,
-      color: task.data.color,
-      checked: false
-    };
+    if (task.data != undefined) {
+      let object = {
+        title: task.data.name,
+        time: task.data.timeTask,
+        date: task.data.dateTask,
+        label: task.data.label,
+        color: task.data.color,
+        checked: false
+      };
 
-    this.tasksArray.push(object);
-    this.updateStorage();
+      this.tasksArray.push(object);
+      this.updateStorage();
+    }
   }
 
   completeTask(): void {
