@@ -30,9 +30,10 @@ export class TimeDateService {
     return date;
   }
 
-  currentDateNumber(): number {
+  currentDateNumber(): string {
     let dateTime = new Date();
-    return dateTime.getDate();
+    let date = dateTime.getDate();
+    return date < 10 ? "0" + String(date) : String(date);
   }
 
   currentMonthNumber(): string {

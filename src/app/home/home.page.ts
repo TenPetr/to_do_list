@@ -13,7 +13,7 @@ import { LoadingController, AlertController } from "@ionic/angular";
   styleUrls: ["home.page.scss"]
 })
 export class HomePage {
-  dateNumber: number = this.timeDate.currentDateNumber();
+  dateNumber: string = this.timeDate.currentDateNumber();
   monthNumber: string = this.timeDate.currentMonthNumber();
 
   showButtons: boolean = false;

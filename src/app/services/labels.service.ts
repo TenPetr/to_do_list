@@ -42,7 +42,7 @@ export class LabelsService {
   }
 
   addNewLabel(label) {
-    if (label.data != undefined) {
+    if (label.role === "addRole") {
       this.usersLabels.push({
         name: label.data.name,
         color: label.data.color

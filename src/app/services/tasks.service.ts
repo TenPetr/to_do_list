@@ -33,7 +33,7 @@ export class TasksService {
   }
 
   pushTasks(task): void {
-    if (task.data != undefined) {
+    if (task.role === "addRole") {
       let object = {
         title: task.data.name,
         time: task.data.timeTask,
