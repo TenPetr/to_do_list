@@ -3,6 +3,7 @@ import { ModalController } from "@ionic/angular";
 import { DoneAllPage } from "../done-all/done-all.page";
 import { TasksService } from "../services/tasks.service";
 import { TimeDateService } from "../services/time-date.service";
+import { SettingsPage } from "../settings/settings.page";
 import { AddNewTaskPage } from "../add-new-task/add-new-task.page";
 import { LoadingController, AlertController } from "@ionic/angular";
 
@@ -47,6 +48,21 @@ export class HomePage {
     modal.onDidDismiss().then(data => {
       if (data.role != "closed") {
         this.taskService.pushTasks(data);
+      }
+      this.headerRefresh();
+    });
+
+    return await modal.present();
+  }
+
+  async settingsModal() {
+    const modal = await this.modalController.create({
+      component: SettingsPage
+    });
+
+    modal.onDidDismiss().then(data => {
+      if (data.role != "closed") {
+        console.log(data);
       }
       this.headerRefresh();
     });

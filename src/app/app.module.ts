@@ -11,14 +11,26 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AddNewTaskPage } from "./add-new-task/add-new-task.page";
 import { DoneAllPage } from "./done-all/done-all.page";
 import { AddNewLabelsPage } from "./add-new-labels/add-new-labels.page";
+import { SettingsPage } from "./settings/settings.page";
 
 import { TimeDateService } from "./services/time-date.service";
 import { TasksService } from "./services/tasks.service";
 import { LabelsService } from "./services/labels.service";
 
 @NgModule({
-  declarations: [AppComponent, AddNewTaskPage, DoneAllPage, AddNewLabelsPage],
-  entryComponents: [AddNewTaskPage, DoneAllPage, AddNewLabelsPage],
+  declarations: [
+    AppComponent,
+    AddNewTaskPage,
+    DoneAllPage,
+    AddNewLabelsPage,
+    SettingsPage
+  ],
+  entryComponents: [
+    AddNewTaskPage,
+    DoneAllPage,
+    AddNewLabelsPage,
+    SettingsPage
+  ],
   imports: [
     BrowserModule,
     FormsModule,

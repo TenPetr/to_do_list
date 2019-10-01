@@ -4,7 +4,7 @@
       <ion-col>
         <ion-text id="dateNumber">{{ dateNumber }}</ion-text>
         <ion-text id="dateNumber2">{{ monthNumber }}</ion-text>
-        <ion-button fill="clear" id="settings">
+        <ion-button fill="clear" id="settings" (click)="settingsModal()">
           <ion-icon id="iconSettings" slot="icon-only" name="settings" color="dark"></ion-icon>
         </ion-button>
         <ion-button fill="clear" id="doneAll" (click)="allDoneModal()">

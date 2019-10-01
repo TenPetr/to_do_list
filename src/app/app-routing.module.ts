@@ -6,7 +6,8 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   { path: 'add-new-task', loadChildren: './add-new-task/add-new-task.module#AddNewTaskPageModule' },
   { path: 'done-all', loadChildren: './done-all/done-all.module#DoneAllPageModule' },
-  { path: 'add-new-labels', loadChildren: './add-new-labels/add-new-labels.module#AddNewLabelsPageModule' },
+  { path: 'add-new-labels', loadChildren: './add-new-labels/add-new-labels.module#AddNewLabelsPageModule' },  { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' },
+
 ];
 
 @NgModule({
