@@ -13,7 +13,10 @@
   <ion-row>
     <ion-col>
       <ion-item>
-        <!-- Code go here -->
+        <ion-label>Select label</ion-label>
+        <ion-select value="" okText="Okay" cancelText="Cancel" [(ngModel)]="selectedLabel">
+          <ion-select-option *ngFor="let label of this.labelService.usersLabels" value="{{ label.name }}">{{ label.name }}</ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-button (click)="saveSettings()" color="dark" id="saveButton">Save</ion-button>
     </ion-col>

@@ -40,7 +40,8 @@ export class TasksService {
         date: task.data.dateTask,
         label: task.data.label,
         color: task.data.color,
-        checked: false
+        checked: false,
+        visible: true
       };
 
       this.tasksArray.push(object);

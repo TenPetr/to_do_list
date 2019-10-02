@@ -16,6 +16,7 @@ import { SettingsPage } from "./settings/settings.page";
 import { TimeDateService } from "./services/time-date.service";
 import { TasksService } from "./services/tasks.service";
 import { LabelsService } from "./services/labels.service";
+import { SettingsService } from "./services/settings.service";
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { LabelsService } from "./services/labels.service";
     TimeDateService,
     TasksService,
     LabelsService,
+    SettingsService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

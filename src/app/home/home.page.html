@@ -20,15 +20,17 @@
     <ion-col size-lg="6" offset-lg="3">
 
       <div id="item" *ngFor="let item of this.taskService.tasksArray; let i = index">
-        <ion-label id="text" class="ion-text-wrap"><p id="taskHeading">{{ item.title }}</p></ion-label>
-        <ion-checkbox id="checkbox" color="dark" [(ngModel)]="item.checked" (ionChange)="displayButtons()"></ion-checkbox><br>
-        <ion-text id="dateAndTime">
-          <span *ngIf="item.time != undefined"><ion-icon name="notifications-outline"></ion-icon><span id="align">{{ item.time | date:'HH:mm' }} </span>&nbsp;&nbsp;</span><span *ngIf="item.date != undefined"><ion-icon name="calendar"></ion-icon><span id="align"> {{ item.date | date:'dd.MM.yyyy' }} </span></span>
-        </ion-text>
-        <span *ngIf="item.label != undefined" id="labels" class="{{ item.color }}">
-          <span id="label">{{ item.label }}</span>
-        </span>
-        <div id="hr"></div>
+        <div *ngIf="item.visible == true">
+          <ion-label id="text" class="ion-text-wrap"><p id="taskHeading">{{ item.title }}</p></ion-label>
+          <ion-checkbox id="checkbox" color="dark" [(ngModel)]="item.checked" (ionChange)="displayButtons()"></ion-checkbox><br>
+          <ion-text id="dateAndTime">
+            <span *ngIf="item.time != undefined"><ion-icon name="notifications-outline"></ion-icon><span id="align">{{ item.time | date:'HH:mm' }} </span>&nbsp;&nbsp;</span><span *ngIf="item.date != undefined"><ion-icon name="calendar"></ion-icon><span id="align"> {{ item.date | date:'dd.MM.yyyy' }} </span></span>
+          </ion-text>
+          <span *ngIf="item.label != undefined" id="labels" class="{{ item.color }}">
+            <span id="label">{{ item.label }}</span>
+          </span>
+          <div id="hr"></div>
+        </div>
       </div>
 
     </ion-col>

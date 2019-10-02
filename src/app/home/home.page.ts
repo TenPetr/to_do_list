@@ -6,6 +6,7 @@ import { TimeDateService } from "../services/time-date.service";
 import { SettingsPage } from "../settings/settings.page";
 import { AddNewTaskPage } from "../add-new-task/add-new-task.page";
 import { LoadingController, AlertController } from "@ionic/angular";
+import { SettingsService } from "../services/settings.service";
 
 @Component({
   selector: "app-home",
@@ -24,6 +25,7 @@ export class HomePage {
     public taskService: TasksService,
     public modalController: ModalController,
     public alertController: AlertController,
+    public settingsService: SettingsService,
     public loadingController: LoadingController
   ) {
     this.loadTasks();
@@ -61,8 +63,9 @@ export class HomePage {
     });
 
     modal.onDidDismiss().then(data => {
+      console.log(data);
       if (data.role != "closed") {
-        console.log(data);
+        this.settingsService.setFilter(data.data);
       }
       this.headerRefresh();
     });
