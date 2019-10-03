@@ -21,7 +21,9 @@
           <ion-select-option *ngFor="let color of this.labelService.avaiableColors" value="{{ color }}">{{ color }}</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-button (click)="saveLabel()" color="dark" id="saveButton">Save</ion-button>
+      <ion-button (click)="saveLabel()" color="dark" id="saveButton" fill="clear">
+        <ion-icon slot="icon-only" name="save" color="dark"></ion-icon>
+      </ion-button>
     </ion-col>
   </ion-row>
 </ion-content>

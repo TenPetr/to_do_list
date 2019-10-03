@@ -20,6 +20,7 @@ export class SettingsPage {
   }
 
   saveSettings() {
-    this.modalCtrl.dismiss(this.selectedLabel), "addRole";
+    this.settingsService.currentlySelected = this.selectedLabel;
+    this.modalCtrl.dismiss(this.selectedLabel, "addRole");
   }
 }

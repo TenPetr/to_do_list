@@ -29,8 +29,12 @@
           <ion-select-option *ngFor="let label of this.labelService.usersLabels" value="{{ label.name }}">{{ label.name }}</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-button (click)="addNewLabel()" color="dark" id="addnewLabels">New Label</ion-button>
-      <ion-button (click)="saveTheText()" color="dark" id="saveButton">Save</ion-button>
+      <ion-button (click)="addNewLabel()" color="dark" id="addnewLabels" fill="clear">
+          <ion-icon slot="icon-only" name="add" color="dark"></ion-icon>
+      </ion-button>
+      <ion-button (click)="saveTheText()" color="dark" id="saveButton" fill="clear">
+          <ion-icon slot="icon-only" name="save" color="dark"></ion-icon>
+      </ion-button>
     </ion-col>
   </ion-row>
 </ion-content>

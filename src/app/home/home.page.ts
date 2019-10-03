@@ -63,9 +63,10 @@ export class HomePage {
     });
 
     modal.onDidDismiss().then(data => {
-      console.log(data);
-      if (data.role != "closed") {
+      if (data.role === "addRole") {
         this.settingsService.setFilter(data.data);
+      } else if (data.role === "cancelFilter") {
+        this.settingsService.cancelFilter();
       }
       this.headerRefresh();
     });
