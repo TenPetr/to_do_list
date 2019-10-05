@@ -19,19 +19,14 @@ import { LabelsService } from "./services/labels.service";
 import { SettingsService } from "./services/settings.service";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AddNewTaskPage,
-    DoneAllPage,
-    AddNewLabelsPageModule,
-    SettingsPage
-  ],
+  declarations: [AppComponent, DoneAllPage, SettingsPage],
   entryComponents: [AddNewTaskPage, DoneAllPage, SettingsPage],
   imports: [
     BrowserModule,
     FormsModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    AddNewLabelsPageModule
   ],
   providers: [
     StatusBar,
