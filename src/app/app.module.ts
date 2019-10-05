@@ -10,7 +10,7 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AddNewTaskPage } from "./add-new-task/add-new-task.page";
 import { DoneAllPage } from "./done-all/done-all.page";
-import { AddNewLabelsPage } from "./add-new-labels/add-new-labels.page";
+import { AddNewLabelsPageModule } from "./add-new-labels/add-new-labels.module";
 import { SettingsPage } from "./settings/settings.page";
 
 import { TimeDateService } from "./services/time-date.service";
@@ -23,15 +23,10 @@ import { SettingsService } from "./services/settings.service";
     AppComponent,
     AddNewTaskPage,
     DoneAllPage,
-    AddNewLabelsPage,
+    AddNewLabelsPageModule,
     SettingsPage
   ],
-  entryComponents: [
-    AddNewTaskPage,
-    DoneAllPage,
-    AddNewLabelsPage,
-    SettingsPage
-  ],
+  entryComponents: [AddNewTaskPage, DoneAllPage, SettingsPage],
   imports: [
     BrowserModule,
     FormsModule,
